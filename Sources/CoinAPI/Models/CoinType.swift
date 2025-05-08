@@ -1,0 +1,5 @@
+//
+//  CoinType.swift
+//  CoinAPI
+//
+

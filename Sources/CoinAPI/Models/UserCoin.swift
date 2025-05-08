@@ -1,0 +1,3 @@
+//UserCoin
+
+import Foundation

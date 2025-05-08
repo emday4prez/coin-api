@@ -1,0 +1,6 @@
+//
+//  DatabaseConfig.swift
+//  CoinAPI
+//
+
+
