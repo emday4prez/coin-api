@@ -10,7 +10,7 @@ import PostgresClientKit
 import Foundation // Needed for UUID
 
 struct CoinCollectionController: RouteCollection {
-    func boot(routes: RoutesBuilder) throws {
+    func boot(routes: any RoutesBuilder) throws {
         let users = routes.grouped("users")
         // Define a route like GET /users/{userId}/coins
         users.get(":userId", "coins", use: getUserCoins)
@@ -47,6 +47,5 @@ struct CoinCollectionController: RouteCollection {
         }
     }
 
-    // Add methods for adding/removing user coins
-    // func addCoinToCollection(req: Request) async throws -> HTTPStatus { ... }
+
 }

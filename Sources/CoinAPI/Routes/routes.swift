@@ -1,7 +1,5 @@
 import Vapor
 
-import Vapor
-
 func routes(_ app: Application) throws {
     // Register controllers
     try app.register(collection: UserController())

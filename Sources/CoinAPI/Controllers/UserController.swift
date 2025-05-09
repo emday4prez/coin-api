@@ -14,7 +14,7 @@ struct UserController: RouteCollection {
     // For simplicity in this example, we'll load config per request,
     // but in a real app, manage connections centrally.
 
-    func boot(routes: RoutesBuilder) throws {
+    func boot(routes: any RoutesBuilder) throws {
         let users = routes.grouped("users")
         users.post(use: createUser) // POST /users
         // Add other user routes like GET /users/{userId}, PUT /users/{userId}, DELETE /users/{userId}

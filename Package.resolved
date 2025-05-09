@@ -1,5 +1,5 @@
 {
-  "originHash" : "03f432891448c24a53c06fbc3269aed44bc90f5faca26e9dbfac5c60b67f404c",
+  "originHash" : "1d233e57a36cdc9d9f3d228ffc96204163cbf83ac899f6e6adbdc90aff313f07",
   "pins" : [
     {
       "identity" : "async-http-client",
@@ -20,6 +20,24 @@
       }
     },
     {
+      "identity" : "bluesocket",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Kitura/BlueSocket.git",
+      "state" : {
+        "revision" : "7b23a867008e0027bfd6f4d398d44720707bc8ca",
+        "version" : "2.0.4"
+      }
+    },
+    {
+      "identity" : "bluesslservice",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Kitura/BlueSSLService",
+      "state" : {
+        "revision" : "b27a94d063962dfa1bba9f79814c4ef202cf33a4",
+        "version" : "2.0.2"
+      }
+    },
+    {
       "identity" : "console-kit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/vapor/console-kit.git",
@@ -35,6 +53,15 @@
       "state" : {
         "revision" : "3498e60218e6003894ff95192d756e238c01f44e",
         "version" : "4.7.1"
+      }
+    },
+    {
+      "identity" : "postgresclientkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/codewinsdotcom/PostgresClientKit.git",
+      "state" : {
+        "revision" : "356ffe0c43722f192d796300557b3b530a0baebc",
+        "version" : "1.5.0"
       }
     },
     {
