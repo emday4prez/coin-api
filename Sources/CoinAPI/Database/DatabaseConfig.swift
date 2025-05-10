@@ -16,16 +16,14 @@ struct DatabaseConfig {
     let password: String? // Optional password
 
     // Helper to create connection configuration
-    var connectionConfiguration: PostgresConnection.Configuration {
-        var config = PostgresConnection.Configuration()
-        config.host = host
-        config.port = port
-        config.database = database
-        config.user = user
-        config.password = password
-        // Add any other necessary configurations like ssl, etc.
-        return config
-    }
+    var connectionConfiguration = PostgresClientKit.ConnectionConfiguration()
+    
+      
+    connectionConfiguration.host = host
+    connectionConfiguration.port = port
+    connectionConfiguration.database = database
+    connectionConfiguration.user = user
+        coconnectionConfiguration.password = password
 
     // Example: Loading config from environment variables (Recommended!)
     static func loadFromEnvironment() -> DatabaseConfig {

@@ -2,16 +2,15 @@
 //  UserController.swift
 //  CoinAPI
 //
-//  Created by Emerson Day on 5/7/25.
-//
+
 
 import Vapor
 import PostgresClientKit
 
 struct UserController: RouteCollection {
-    // We'll pass the database configuration here, or ideally
+    //  pass the database configuration here, or ideally
     // get a connection pool from the request's application context.
-    // For simplicity in this example, we'll load config per request,
+    //  load config per request,
     // but in a real app, manage connections centrally.
 
     func boot(routes: any RoutesBuilder) throws {
@@ -27,7 +26,7 @@ struct UserController: RouteCollection {
 
         // 2. Establish Database Connection (Simplified - In real app, use a pool/service)
         let dbConfig = DatabaseConfig.loadFromEnvironment()
-        let connection: PostgresConnection // Declare here
+        let connection: PostgresConnection
         do {
             connection = try createDatabaseConnection(config: dbConfig)
             defer { try? connection.close() } // Ensure connection is closed
@@ -44,7 +43,7 @@ struct UserController: RouteCollection {
             return createdUser
         } catch {
              // If insert fails, re-throw a Vapor Abort error
-             // You might inspect the error to give more specific status codes
+             // give more specific status codes
              throw Abort(.internalServerError, reason: "Failed to create user: \(error.localizedDescription)")
         }
     }

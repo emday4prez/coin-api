@@ -40,7 +40,7 @@ struct UserCoin: Codable {
 // --- Database Operations Functions ---
 
 // Insert a new user
-func insertUser(user: User, connection: PostgresConnection) throws -> User {
+func insertUser(user: User, connection: PostgresClientKit) throws -> User {
     let query = """
     INSERT INTO users (id, username, email)
     VALUES ($1, $2, $3)
