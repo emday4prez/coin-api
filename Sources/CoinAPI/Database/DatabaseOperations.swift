@@ -33,8 +33,7 @@ struct CoinType: Codable {
 struct UserCoin: Codable {
     let userId: UUID
     let coinTypeId: UUID
-    // You might add fields like 'quantity', 'condition', 'purchaseDate', etc.
-    let quantity: Int? // Example additional field
+    let quantity: Int?
 }
 
 // --- Database Operations Functions ---

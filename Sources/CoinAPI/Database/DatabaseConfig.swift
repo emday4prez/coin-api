@@ -25,15 +25,14 @@ struct DatabaseConfig {
     connectionConfiguration.user = user
         coconnectionConfiguration.password = password
 
-    // Example: Loading config from environment variables (Recommended!)
+    // Example (
     static func loadFromEnvironment() -> DatabaseConfig {
-        // IMPORTANT: Get these values from environment variables
-        // DO NOT HARDCODE CREDENTIALS IN YOUR CODE
-        let host = ProcessInfo.processInfo.environment["DB_HOST"] ?? "localhost"
-        let port = Int(ProcessInfo.processInfo.environment["DB_PORT"] ?? "5432") ?? 5432
-        let database = ProcessInfo.processInfo.environment["DB_NAME"] ?? "your_database_name" // Replace with your DB name
-        let user = ProcessInfo.processInfo.environment["DB_USER"] ?? "your_user" // Replace with your user
-        let password = ProcessInfo.processInfo.environment["DB_PASSWORD"] // Get password from environment
+       
+        let host = ProcessInfo.processInfo.environment["DB_HOST"] 
+        let port = Int(ProcessInfo.processInfo.environment["DB_PORT"]
+        let database = ProcessInfo.processInfo.environment["DB_NAME"]
+        let user = ProcessInfo.processInfo.environment["DB_USER"]
+        let password = ProcessInfo.processInfo.environment["DB_PASSWORD"]
 
         // Basic validation (you might want more robust checks)
         guard !database.isEmpty, !user.isEmpty else {
@@ -48,7 +47,7 @@ struct DatabaseConfig {
 // In a real app, manage this connection carefully (e.g., connection pool)
 func createDatabaseConnection(config: DatabaseConfig) throws -> PostgresConnection {
     do {
-        let connection = try PostgresConnection(configuration: config.connectionConfiguration)
+        let connection = try PostgresClientKit(configuration: config.connectionConfiguration)
         print("Database connection established successfully!")
         return connection
     } catch {
