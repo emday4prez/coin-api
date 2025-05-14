@@ -2,8 +2,7 @@
 //  CoinCollectionController.swift
 //  CoinAPI
 //
-//  Created by Emerson Day on 5/7/25.
-//
+
 
 import Vapor
 import PostgresClientKit
@@ -14,7 +13,7 @@ struct CoinCollectionController: RouteCollection {
         let users = routes.grouped("users")
         // Define a route like GET /users/{userId}/coins
         users.get(":userId", "coins", use: getUserCoins)
-        // Add routes for adding/removing coins: POST /users/{userId}/coins, DELETE /users/{userId}/coins/{coinId}
+       
     }
 
     // Handles GET /users/{userId}/coins
@@ -25,7 +24,7 @@ struct CoinCollectionController: RouteCollection {
             throw Abort(.badRequest, reason: "Invalid user ID format")
         }
 
-        // 2. Establish Database Connection (Simplified)
+ 
         let dbConfig = DatabaseConfig.loadFromEnvironment()
         let connection: PostgresConnection
         do {

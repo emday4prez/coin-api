@@ -21,10 +21,10 @@ struct UserController: RouteCollection {
 
     // Handles POST /users
     func createUser(req: Request) async throws -> User {
-        // 1. Decode the incoming JSON request body into a User struct
+        // Decode the incoming JSON request body into a User struct
         let newUser = try req.content.decode(User.self)
 
-        // 2. Establish Database Connection (Simplified - In real app, use a pool/service)
+        // Establish Database Connection (Simplified - In real app, use a pool/service)
         let dbConfig = DatabaseConfig.loadFromEnvironment()
         let connection: PostgresConnection
         do {
@@ -36,18 +36,16 @@ struct UserController: RouteCollection {
         }
 
 
-        // 3. Perform the database insert operation
+        //  Perform the database insert operation
         do {
             let createdUser = try insertUser(user: newUser, connection: connection)
-            // 4. Return the created user (includes the assigned ID)
+      
             return createdUser
         } catch {
-             // If insert fails, re-throw a Vapor Abort error
-             // give more specific status codes
+        
              throw Abort(.internalServerError, reason: "Failed to create user: \(error.localizedDescription)")
         }
     }
 
-    // Add other controller methods like getUser(req: Request) -> User
-    // func getUser(req: Request) async throws -> User { ... }
+ 
 }
