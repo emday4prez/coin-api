@@ -6,19 +6,16 @@ import PostgresClientKit
 import Foundation // Needed for UUID
 
 // --- Data Models (Swift Structs) ---
-// These structs represent the data we work with in Swift.
 // They should conform to Codable so Vapor can easily convert them to/from JSON.
 
 struct User: Codable {
-    // UUID is a common choice for primary keys in modern databases
-    // In PostgreSQL, this corresponds to the UUID type.
-    // If your DB uses serial INT, change this to Int and adjust SQL.
-    let id: UUID? // Optional for creation, nil until inserted
-    let username: String
-    let email: String? // Assuming email is optional
-    let createdAt: Date? // Assuming your table has a timestamp
 
-    // Add other fields as per your 'users' table
+    let id: UUID?
+    let username: String
+    let email: String?
+    let createdAt: Date?
+
+
 }
 
 struct CoinType: Codable {
